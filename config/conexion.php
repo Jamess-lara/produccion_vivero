@@ -4,7 +4,7 @@ class Conexion
     private string $host = 'localhost';
     private string $user = 'root';
     private string $pass = '';
-    private string $db = 'produccion_cacao2';
+    private string $db = 'produccion_vivero';
 
     private function Conectar()
     {

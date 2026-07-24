@@ -2,18 +2,23 @@
 // Definimos los datos de Compras por mes
 mysqli_query($con, "SET lc_time_names = 'es_ES'");
 
-$query = "SELECT DATE_FORMAT(fecha, '%M') AS mes, SUM(total) as total FROM compras
-WHERE MONTH(fecha) != MONTH(NOW()) AND MONTH(fecha) >= MONTH(NOW()) - 6
-GROUP BY MONTH(fecha)";
+$query = "SELECT DATE_FORMAT(c.fecha, '%M') AS mes, SUM(c.total) AS total 
+          FROM compras c 
+          JOIN proveedores p ON c.idproveedor = p.id 
+          WHERE c.fecha >= DATE_SUB(NOW(), INTERVAL 6 MONTH)
+          GROUP BY YEAR(c.fecha), MONTH(c.fecha), DATE_FORMAT(c.fecha, '%M')
+          ORDER BY MIN(c.fecha) ASC";
 $resCompra = mysqli_query($con, $query);
 $datosCompra = array(
     array('Mes', 'Compras')
 );
 
-if ($resCompra) {
+if ($resCompra && mysqli_num_rows($resCompra) > 0) {
     while ($row = mysqli_fetch_assoc($resCompra)) {
-        array_push($datosCompra, array($row['mes'], (float) $row['total']));
+        array_push($datosCompra, array(ucfirst($row['mes']), (float) $row['total']));
     }
+} else {
+    array_push($datosCompra, array('Sin Registros', 0.0));
 }
 
 // Conteo de compras totales
@@ -37,7 +42,7 @@ $resNumUsuarios = mysqli_query($con, $query);
 $rowNumUsuarios = $resNumUsuarios ? mysqli_fetch_assoc($resNumUsuarios) : ['num' => 0];
 
 // Total compras del mes actual
-$query = "SELECT SUM(total) AS total FROM compras WHERE MONTH(fecha) = MONTH(NOW()) AND YEAR(fecha) = YEAR(NOW());";
+$query = "SELECT SUM(c.total) AS total FROM compras c JOIN proveedores p ON c.idproveedor = p.id WHERE MONTH(c.fecha) = MONTH(NOW()) AND YEAR(c.fecha) = YEAR(NOW());";
 $resActual = mysqli_query($con, $query);
 $rowActual = $resActual ? mysqli_fetch_assoc($resActual) : ['total' => 0];
 
