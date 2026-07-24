@@ -1,0 +1,57 @@
+# ==========================================
+# .gitignore para Sistema Producción Vivero
+# ==========================================
+
+# 1. Archivos de Entorno y Configuración Sensible
+.env
+.env.local
+.env.*
+config/conexion.local.php
+config/*.local.php
+
+# 2. Archivos de Subidas de Usuarios (Uploads)
+upload/*
+!upload/.gitkeep
+
+# 3. Logs, Caché y Archivos Temporales
+*.log
+error_log
+logs/
+cache/
+tmp/
+temp/
+*.tmp
+*.swp
+*.bak
+
+# 4. Dependencias y Paquetes de Terceros
+vendor/
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 5. Archivos del Sistema Operativo
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# 6. Archivos de Entornos de Desarrollo / IDEs
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.workspace
+
+# 7. Resguardos / Dumps temporales de Base de Datos
+*.sql.bak
+*.sql.tmp
+# (Descomentar la siguiente línea si no se desea incluir respaldos SQL en Git)
+# *.sql
