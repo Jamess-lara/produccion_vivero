@@ -76,27 +76,9 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="panel.php?modulo=clientes" class="nav-link <?php echo ($modulo == "clientes") ? " active " : " "; ?>">
-                                    <i class="fas fa-user-circle nav-icon" aria-hidden="true"></i>
-                                    <p>Clientes</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="panel.php?modulo=trabajadores" class="nav-link <?php echo ($modulo == "trabajadores") ? " active " : " "; ?>">
-                                    <i class="fas fa-users nav-icon" aria-hidden="true"></i>
-                                    <p>Trabajadores</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
                                 <a href="panel.php?modulo=insumos" class="nav-link <?php echo ($modulo == "insumos") ? " active " : " "; ?>">
                                     <i class="fas fa-seedling nav-icon" aria-hidden="true"></i>
                                     <p>Insumos</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="panel.php?modulo=cuidado" class="nav-link <?php echo ($modulo == "cuidado" || $modulo == "generar-cuidado") ? " active " : " "; ?>">
-                                    <i class="fas fa-hand-holding nav-icon" aria-hidden="true"></i>
-                                    <p>Cuidados</p>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -105,19 +87,6 @@
                                     <p>Compras</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="panel.php?modulo=ventas" class="nav-link <?php echo ($modulo == "ventas") ? " active " : " "; ?>">
-                                    <i class="fas fa-shopping-basket nav-icon" aria-hidden="true"></i>
-                                    <p>Ventas</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="panel.php?modulo=cosecha" class="nav-link <?php echo ($modulo == "cosecha") ? " active " : " "; ?>">
-                                    <i class="fas fa-tractor nav-icon" aria-hidden="true"></i>
-                                    <p>Cosecha</p>
-                                </a>
-                            </li>
-
                         </ul>
             </nav>
             <!-- /.sidebar-menu -->

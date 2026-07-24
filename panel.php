@@ -5,7 +5,8 @@ session_regenerate_id(true);
 if (isset($_REQUEST['modulo']) && $_REQUEST['modulo'] == "cerrar") {
   session_destroy();
   $_SESSION = array();
-  echo '<meta http-equiv="refresh" content="0; url=index.php" />  ';
+  echo '<meta http-equiv="refresh" content="0; url=index.php" />';
+  exit();
 }
 
 ?>
@@ -58,6 +59,23 @@ if (isset($_REQUEST['modulo']) && $_REQUEST['modulo'] == "cerrar") {
   <?php
 
   $modulo = $_REQUEST['modulo'] ?? '';
+
+  // Lista blanca de módulos permitidos (Centrado en Compras)
+  $modulosPermitidos = [
+    '',
+    'inicio',
+    'usuarios',
+    'proveedores',
+    'insumos',
+    'compras',
+    'generar-compra',
+    'finalizarCompra',
+    'perfilUsuario'
+  ];
+
+  if (!in_array($modulo, $modulosPermitidos)) {
+    $modulo = 'inicio';
+  }
 
   //Conexión a la Base de Datos
   require_once "config/conexion.php";
