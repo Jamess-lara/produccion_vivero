@@ -92,7 +92,7 @@ INSERT INTO `insumos` (`id`, `nombre`, `precio`, `existencia`, `imagen`) VALUES
 (3, 'Insecticida - 1 Litro', '20.00', 8, '3.jpg'),
 (4, 'Herbicida - 1 Litro', '15.00', 11, '4.jpg'),
 (5, 'Bioestimulantes - 1 Litro', '40.00', 10, '5.jpg'),
-(6, 'Complemento para el cuidado del cacao', '12.00', 10, '6.jpg');
+(6, 'Complemento para el cuidado de plantas', '12.00', 10, '6.jpg');
 
 -- --------------------------------------------------------
 

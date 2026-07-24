@@ -16,8 +16,8 @@
             <a class="nav-link" title="Editar Perfil de Usuario" href="panel.php?modulo=perfilUsuario">
                 <i class="far fa-user"></i>
             </a>
-            <a class="nav-link text-danger" href="panel.php?modulo=cerrar" title="Cerrar sesion">
-                <i class="fas fa-door-closed    "></i>
+            <a class="nav-link text-danger" href="panel.php?modulo=cerrar" title="Cerrar sesión">
+                <i class="fas fa-sign-out-alt"></i>
             </a>
 
         </ul>
@@ -29,7 +29,7 @@
         <!-- Brand Logo -->
         <a href="panel.php" class="brand-link">
             <img src="images/logo.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">Panel de Control</span>
+            <span class="brand-text font-weight-light">Vivero de Plantas</span>
         </a>
 
         <!-- Sidebar -->
