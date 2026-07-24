@@ -63,13 +63,17 @@ if (isset($_POST['ingresar_insumo'])) {
     $id = $_POST['delete_id'];
 
     $insumo = new Insumo($id, '', 0, 0, '');
-    $res = $insumo->Eliminar($con);
-
-    if ($res) {
-        $_SESSION['mensaje'] = "<b>Insumo eliminado exitosamente</b>";
-        echo '<meta http-equiv="refresh" content="0; url=panel.php?modulo=insumos" />  ';
+    if ($insumo->TieneCompras($con)) {
+        MensajeError("No se puede eliminar el insumo porque ya está registrado en una o más compras.");
     } else {
-        MensajeError("Error al eliminar insumo " . mysqli_error($con));
+        $res = $insumo->Eliminar($con);
+
+        if ($res) {
+            $_SESSION['mensaje'] = "<b>Insumo eliminado exitosamente</b>";
+            echo '<meta http-equiv="refresh" content="0; url=panel.php?modulo=insumos" />  ';
+        } else {
+            MensajeError("Error al eliminar insumo " . mysqli_error($con));
+        }
     }
 }
 

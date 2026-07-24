@@ -47,6 +47,14 @@ class Insumo
         return mysqli_query($con, $query);
     }
 
+    public function TieneCompras($con): bool
+    {
+        $idEscaped = mysqli_real_escape_string($con, (string)$this->id);
+        $query = "SELECT id FROM compras WHERE idinsumo = '$idEscaped' LIMIT 1;";
+        $res = mysqli_query($con, $query);
+        return ($res && mysqli_num_rows($res) > 0);
+    }
+
     public function Eliminar($con)
     {
         $query = "DELETE FROM insumos WHERE id = '$this->id';";
