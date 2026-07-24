@@ -17,7 +17,7 @@ if ($resCompra) {
 }
 
 // Conteo de compras totales
-$query = "SELECT COUNT(id) AS num FROM compras;";
+$query = "SELECT COUNT(DISTINCT c.codigo) AS num FROM compras c JOIN proveedores p ON c.idproveedor = p.id;";
 $resNumCompras = mysqli_query($con, $query);
 $rowNumCompras = $resNumCompras ? mysqli_fetch_assoc($resNumCompras) : ['num' => 0];
 
