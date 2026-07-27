@@ -1,0 +1,252 @@
+/* ==========================================================
+ * TEMÁTICA VIVERO DE PLANTAS - ESTILOS PERSONALIZADOS
+ * ========================================================== */
+
+:root {
+    --vivero-primary: #2e7d32;
+    --vivero-primary-dark: #1b5e20;
+    --vivero-primary-light: #4caf50;
+    --vivero-accent: #81c784;
+    --vivero-bg-soft: #f4fbf7;
+    --vivero-earth: #795548;
+    --vivero-shadow: rgba(46, 125, 50, 0.15);
+}
+
+/* --- ESTILOS DE LOGIN (index.view.php) --- */
+body.login-page {
+    background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 60%, #4caf50 100%) !important;
+    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body.login-page::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%),
+                radial-gradient(circle at 20% 80%, rgba(0,0,0,0.15) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.login-box {
+    width: 420px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.vivero-login-header {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 25px;
+}
+
+.vivero-login-header .icon-container {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px auto;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.vivero-login-header .icon-container i {
+    font-size: 38px;
+    color: #ffffff;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.vivero-login-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.vivero-login-header p {
+    font-size: 14px;
+    color: #c8e6c9;
+    margin-top: 5px;
+    font-weight: 300;
+}
+
+.login-card-body {
+    border-radius: 16px !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25) !important;
+    background: #ffffff !important;
+    padding: 30px !important;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.vivero-input-group .form-control {
+    border-radius: 8px 0 0 8px !important;
+    border: 1px solid #ced4da;
+    border-right: none;
+    padding: 12px 15px;
+    height: auto;
+}
+
+.vivero-input-group .form-control:focus {
+    border-color: var(--vivero-primary);
+    box-shadow: 0 0 0 0.2rem rgba(46, 125, 50, 0.25);
+}
+
+.vivero-input-group .input-group-text {
+    border-radius: 0 8px 8px 0 !important;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-left: none;
+    color: var(--vivero-primary);
+}
+
+.btn-vivero {
+    background: linear-gradient(135deg, var(--vivero-primary) 0%, var(--vivero-primary-dark) 100%) !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    padding: 12px 20px !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3) !important;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-vivero:hover {
+    background: linear-gradient(135deg, #388e3c 0%, #1b5e20 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(46, 125, 50, 0.4) !important;
+}
+
+/* --- ESTILOS DEL PANEL (panel.php / panel-header.view.php) --- */
+
+/* Sidebar Branding */
+.main-sidebar {
+    background-color: #1a261c !important; /* Dark botanical background */
+}
+
+.brand-link {
+    background-color: #121c13 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 15px 20px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.brand-link .brand-icon {
+    font-size: 22px;
+    color: #66bb6a;
+    margin-right: 12px;
+}
+
+.brand-link .brand-text {
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    letter-spacing: 0.5px;
+    font-size: 1.1rem;
+}
+
+/* Navigation items */
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active,
+.sidebar-dark-primary .nav-treeview > .nav-item > .nav-link.active {
+    background: linear-gradient(90deg, var(--vivero-primary) 0%, var(--vivero-primary-light) 100%) !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 10px rgba(46, 125, 50, 0.3) !important;
+}
+
+.nav-sidebar .nav-link {
+    border-radius: 8px;
+    margin-bottom: 4px;
+    transition: all 0.2s ease;
+}
+
+.nav-sidebar .nav-link:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.06) !important;
+    color: #a5d6a7 !important;
+}
+
+.nav-sidebar .nav-icon {
+    color: #81c784 !important;
+}
+
+.nav-sidebar .nav-link.active .nav-icon {
+    color: #ffffff !important;
+}
+
+/* Top Navbar */
+.main-header.navbar {
+    border-bottom: 2px solid #e0f2f1;
+}
+
+.vivero-status-badge {
+    background-color: #e8f5e9;
+    color: var(--vivero-primary-dark);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid #c8e6c9;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Dashboard Cards & Widgets */
+.small-box {
+    border-radius: 12px !important;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.small-box:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12) !important;
+}
+
+.small-box .icon > i {
+    font-size: 70px !important;
+    opacity: 0.25;
+    transition: opacity 0.3s ease;
+}
+
+.small-box:hover .icon > i {
+    opacity: 0.4;
+}
+
+.card {
+    border-radius: 12px !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+.card-primary.card-outline {
+    border-top: 3px solid var(--vivero-primary) !important;
+}
+
+.card-header {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+    padding: 15px 20px !important;
+}
+
+.card-title {
+    font-weight: 600 !important;
+    color: #2c3e50 !important;
+}
+
+/* Footer / General */
+body:not(.login-page) {
+    background-color: #f8faf9 !important;
+}

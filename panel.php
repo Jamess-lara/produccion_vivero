@@ -44,6 +44,8 @@ if (isset($_REQUEST['modulo']) && $_REQUEST['modulo'] == "cerrar") {
   <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css">
   <link rel="stylesheet" href="css/editor.dataTables.min.css">
+  <!-- Estilos Temáticos Vivero -->
+  <link rel="stylesheet" href="css/vivero-theme.css">
 
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
